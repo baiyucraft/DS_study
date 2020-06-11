@@ -15,7 +15,7 @@ int DelSame(SqList* L) {
 	return 1;
 }
 
-void Solve6() {
+void SolveSqlist_6() {
 	ElemtType a[11] = { 1,2,2,2,2,3,3,3,4,4,5 };
 	SqList L;
 	InitSqList(&L);

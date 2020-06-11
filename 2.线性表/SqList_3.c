@@ -24,7 +24,7 @@ void DelX2(SqList* L, ElemtType x) {
 	L->length = L->length - k;
 }
 
-void Solve3() {
+void SolveSqlist_3() {
 	ElemtType a[10] = { 1,2,1,2,3,5,6,4,2,1 };
 	SqList L;
 	InitSqList(&L);

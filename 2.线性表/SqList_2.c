@@ -10,7 +10,7 @@ void Inversion(SqList* L){
 	}
 }
 
-void Solve2() {
+void SolveSqlist_2() {
 	ElemtType a[5] = { 2,3,5,4,1 };
 	SqList L;
 	InitSqList(&L);

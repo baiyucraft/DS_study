@@ -24,7 +24,7 @@ SqList Merge(SqList* L1, SqList* L2) {
 	return L;
 }
 
-void Solve7() {
+void SolveSqlist_7() {
 	ElemtType a[5] = { 1,2,5,7,9 };
 	SqList L1;
 	InitSqList(&L1);

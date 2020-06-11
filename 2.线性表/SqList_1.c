@@ -19,7 +19,7 @@ int DelMin(SqList* L, ElemtType* e) {
 	return 1;
 }
 
-void Solve1(){
+void SolveSqlist_1(){
 	int a[5] = { 1, 2, 3, 4, 5 };
 	SqList L;
 	InitSqList(&L);

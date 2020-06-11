@@ -3,9 +3,9 @@
 
 void SearchX(SqList* L, ElemtType x) {
 	int i = 0;
-	// é¡ºåºæŸ¥æ‰¾æ—¶é—´ä¸æ˜¯æœ€å°‘
+	// Ë³Ğò²éÕÒÊ±¼ä²»ÊÇ×îÉÙ
 	//for (; i < L->length && L->data[i] < x; i++);
-	// æŠ˜åŠæŸ¥æ‰¾ï¼ˆæ—¶é—´æœ€å°‘ï¼‰
+	// ÕÛ°ë²éÕÒ£¨Ê±¼ä×îÉÙ£©
 	int low = 0, high = L->length - 1;
 	while (low < high) {
 		i = (low + high) / 2;
@@ -14,26 +14,26 @@ void SearchX(SqList* L, ElemtType x) {
 			low = i + 1;
 		else high = i - 1;
 	}
-	// æ‰¾åˆ°äº¤æ¢ä½ç½®
+	// ÕÒµ½½»»»Î»ÖÃ
 	if (L->data[i] == x && i != L->length - 1) {
 		int temp = L->data[i];
 		L->data[i] = L->data[i + 1];
 		L->data[i + 1] = temp;
 	}
-	// åä¹‹åŠ å…¥
+	// ·´Ö®¼ÓÈë
 	else {
 		InsertList(L, i + 1, x);
 	}
 }
 
-void Solve9() {
+void SolveSqlist_9() {
 	ElemtType a[13] = { 1,2,3,5,6,7,9,12,46,50,57,59,65 };
 	SqList L;
 	InitSqList(&L);
 	CreateList(&L, a, 13);
-	printf("åŸè¡¨ï¼š");
+	printf("Ô­±í£º");
 	PrintList(&L);
 	SearchX(&L, 59);
-	printf("æŸ¥æ‰¾åï¼š");
+	printf("²éÕÒºó£º");
 	PrintList(&L);
 }

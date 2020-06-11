@@ -3,26 +3,30 @@
 
 
 int main() {
-    // 功能测试
-    //MainList();
-    // 1
-    //Solve1();
-    // 2
-    //Solve2();
-    // 3
-    //Solve3();
-    // 4-5
-    //Solve4();
-    // 6
-    //Solve6();
-    // 7
-    //Solve7();
-    // 8-10
-    //Solve8();
-    // 9
-    //Solve9();
-    // 11
-    //Solve11();
-    // 12
-    Solve11();
+    // 功能测试SqList
+    {
+        //MainList();
+        // 1
+        //SolveSqlist_1();
+        // 2
+        //SolveSqlist_2();
+        // 3
+        //SolveSqlist_3();
+        // 4-5
+        //SolveSqlist_4();
+        // 6
+        //SolveSqlist_6();
+        // 7
+        //SolveSqlist_7();
+        // 8-10
+        //SolveSqlist_8();
+        // 9
+        //SolveSqlist_9();
+        // 11
+        //SolveSqlist_11();
+        // 12
+        //SolveSqlist_12();
+        // 13
+        SolveSqlist_13();
+    }
 }

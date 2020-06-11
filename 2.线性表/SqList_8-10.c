@@ -21,7 +21,7 @@ void ReverseMN(SqList* L, int m, int n) {
 	Reverse(L, n+1, m+n);
 }
 
-void Solve8() {
+void SolveSqlist_8() {
 	ElemtType a[13] = { 1,2,3,5,6,7,9,12,46,50,57,59,65 };
 	SqList L;
 	InitSqList(&L);

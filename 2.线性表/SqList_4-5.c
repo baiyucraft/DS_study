@@ -51,7 +51,7 @@ int DelS_T2(SqList* L, ElemtType s, ElemtType t) {
 	return 1;
 }
 
-void Solve4() {
+void SolveSqlist_4() {
 	ElemtType a[10] = { 1,2,3,4,5,6,7,8,9,10 };
 	SqList L;
 	InitSqList(&L);
