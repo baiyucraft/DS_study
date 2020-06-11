@@ -14,7 +14,7 @@ void DelX1(SqList* L, ElemtType x) {
 void DelX2(SqList* L, ElemtType x) {
 	int k = 0;
 	for (int i = 0; i < L->length; i++) {
-		if (L->data[i] == x){
+		if (L->data[i] == x) {
 			k++;
 		}
 		else {

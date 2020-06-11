@@ -23,7 +23,7 @@ int CreateList(SqList* L, ElemtType a[], int n);
 // 2、插入元素；i为插入位置，e为插入数据
 int InsertList(SqList* L, int i, ElemtType e);
 // 3、删除元素；删除第i个元素，并返回e
-int DeleteList(SqList * L, int i, ElemtType * e);
+int DeleteList(SqList* L, int i, ElemtType* e);
 // 4、按值查找元素；查找元素值为e的元素，返回位置
 int LocateElem(SqList* L, ElemtType e);
 // 5、按位查找元素；查找位置i的元素
@@ -52,7 +52,7 @@ void Solve3();
 // 4.5.(思想一样)
     // 自己写法
 int DelS_T1(SqList* L, ElemtType s, ElemtType t);
-    // 答案写法
+// 答案写法
 int DelS_T2(SqList* L, ElemtType s, ElemtType t);
 void Solve4();
 // 6.
@@ -70,4 +70,10 @@ void Solve8();
 // 9.
 void SearchX(SqList* L, ElemtType x);
 void Solve9();
+// 11.
+// 空间上不高效（合并然后找中位数）时间o（n），空间o（2n）
+ElemtType MidNum(SqList* L1, SqList* L2);
+// 分别取中位数比较（空间高效）--答案题解 时间o（log2 n），空间o（1）
+ElemtType MidNum2(SqList* L1, SqList* L2);
+void Solve11();
 #endif // !_SQLIST_H_

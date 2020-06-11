@@ -116,6 +116,6 @@ void MainList(){
     printf("5、按位查找元素：->%d\n", GetElem(&L, 3));
     // 6.判空
     printf("6、判空：->%d\n", Empty(&L));
-    // 7.销毁(先malloc)
+    // 7.销毁(先malloc) 
     // printf("7、销毁：->%d", DestoryList(&L));
 }

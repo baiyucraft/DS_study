@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include "SqList.h"
-
+//
 int DelMin(SqList* L, ElemtType* e) {
 	if (L->length == 0) {
 		printf("БэЮЊПе");

@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include "SqList.h"
-
+//
 void Inversion(SqList* L){
 	ElemtType temp;
 	for (int i = 0; i < L->length / 2; i++) {
