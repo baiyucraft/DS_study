@@ -31,10 +31,10 @@ void Solve3() {
 	CreateList(&L, a, 10);
 	printf("原表：");
 	PrintList(&L);
-	printf("现表1：");
 	DelX1(&L, 1);
+	printf("现表1：");
 	PrintList(&L);
-	printf("现表2：");
 	DelX2(&L, 2);
+	printf("现表2：");
 	PrintList(&L);
 }

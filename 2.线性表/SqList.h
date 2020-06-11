@@ -10,10 +10,10 @@ typedef struct {
     int data[MaxSize];
     int length;
 }SqList;
-// 动态分配    //初始长度
+// 动态分配                   //初始长度
 typedef struct {
     int* data;              // 动态分配数组的指针
-    int MaxS, length;    // 最大容量和个数
+    int MaxS, length;       // 最大容量和个数
 } SeqList;                  // 动态分配、顺序表的类型定义
 
 // 初始化顺序表
@@ -49,4 +49,25 @@ void Solve2();
 void DelX1(SqList* L, ElemtType x);
 void DelX2(SqList* L, ElemtType x);
 void Solve3();
+// 4.5.(思想一样)
+    // 自己写法
+int DelS_T1(SqList* L, ElemtType s, ElemtType t);
+    // 答案写法
+int DelS_T2(SqList* L, ElemtType s, ElemtType t);
+void Solve4();
+// 6.
+int DelSame(SqList* L);
+void Solve6();
+// 7.
+SqList Merge(SqList* L1, SqList* L2);
+void Solve7();
+// 8.
+// 将顺序表L的第left元素开始到第right元素逆置
+void Reverse(SqList* L, int left, int right);
+// 将前m项和后n项分别逆置
+void ReverseMN(SqList* L, int m, int n);
+void Solve8();
+// 9.
+void SearchX(SqList* L, ElemtType x);
+void Solve9();
 #endif // !_SQLIST_H_
