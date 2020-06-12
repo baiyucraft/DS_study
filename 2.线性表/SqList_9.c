@@ -1,10 +1,10 @@
-#include <stdint.h>
+#include <stdio.h>
 #include "SqList.h"
 
 void SearchX(SqList* L, ElemtType x) {
 	int i = 0;
 	// 顺序查找时间不是最少
-	//for (; i < L->length && L->data[i] < x; i++);
+	// for (; i < L->length && L->data[i] < x; i++);
 	// 折半查找（时间最少）
 	int low = 0, high = L->length - 1;
 	while (low < high) {

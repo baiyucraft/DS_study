@@ -1,3 +1,4 @@
+// 顺序表
 #ifndef _SQLIST_H_
 #define _SQLIST_H_
 
@@ -13,7 +14,7 @@ typedef struct {
 // 动态分配                   //初始长度
 typedef struct {
     int* data;              // 动态分配数组的指针
-    int MaxS, length;       // 最大容量和个数
+    int MaxS, length;       // 最大容量和当前长度
 } SeqList;                  // 动态分配、顺序表的类型定义
 
 // 初始化顺序表
