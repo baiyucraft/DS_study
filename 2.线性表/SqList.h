@@ -36,8 +36,8 @@ int DestoryList(SqList* L);
 // 8、打印表
 void PrintList(SqList* L);
 
-//功能测试
-void MainList();
+// 功能测试
+void MainSqList();
 
 // 题目解答
 // 1.

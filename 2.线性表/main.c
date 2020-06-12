@@ -1,11 +1,12 @@
 #include <stdio.h>
 #include "SqList.h"
+#include "LinkList.h"
 
 
 int main() {
-    // 功能测试SqList
+    // 顺序表SqList
     {
-        //MainList();
+        //MainSqList();
         // 1
         //SolveSqlist_1();
         // 2
@@ -27,6 +28,10 @@ int main() {
         // 12
         //SolveSqlist_12();
         // 13
-        SolveSqlist_13();
+        //SolveSqlist_13();
+    }
+    // 单链表LinkList
+    {
+        MainLinkList();
     }
 }

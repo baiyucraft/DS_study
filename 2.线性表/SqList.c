@@ -92,7 +92,7 @@ void PrintList(SqList* L) {
     printf("]\n");
 }
 
-void MainList(){
+void MainSqList(){
     ElemtType a[5] = { 1, 2, 3, 4, 5 };
     SqList L;
     // 初始化表
