@@ -122,9 +122,22 @@ int InsertLinkListAfter(LinkList* L, int i, ElemtType e) {
 	s->data = temp;
 	return 1;
 }
-// 6.删除结点，删除第i个结点，并返回被删除的元素
+// 6.删除结点，删除第i个结点，并返回被删除的元素的值
 int DeleteLinkList(LinkList* L, int i, ElemtType* e) {
-
+	if (i<1 || i>LengthLinkList(*L)) {
+		printf("要删除的结点不存在");
+		return 0;
+	}
+	// 获取要删除结点的前驱结点p
+	LNode* p = GetLinkListElem(*L, i - 1);
+	// 获取要删除的结点q
+	LNode* q = p->next;
+	// 将p的后继结点变为要删除结点q的后继结点，即q结点从链表中断开
+	p->next = q->next;
+	*e = q->data;
+	// 释放要删除结点q的存储空间
+	free(q);
+	return 1;
 }
 // 7.获取单链表的长度
 int LengthLinkList(LinkList L) {
@@ -138,11 +151,28 @@ int LengthLinkList(LinkList L) {
 }
 // 8.判空
 int EmptyLinkList(LinkList L) {
-
+	if (LengthLinkList(L)) {
+		return 1;
+	}
+	return 0;
 }
 // 9.销毁单链表
 int DestroyLinkList(LinkList* L) {
-
+	// 获取第一个结点
+	LNode* p = (*L)->next;
+	// 给定要释放空间的结点Del
+	LNode* Del = p;
+	while (p != NULL) {
+		// p变成下一个结点
+		p = p->next;
+		// 释放Del的空间
+		free(Del);
+		// Del重新指向新的p
+		Del = p;
+	}
+	// 释放头结点
+	free(*L);
+	return 1;
 }
 // 10.打印单链表
 void PrintLinkList(LinkList L) {
@@ -154,6 +184,7 @@ void PrintLinkList(LinkList L) {
 	printf("NULL\n");
 }
 
+// 功能实现
 void MainLinkList() {
 	LinkList L;
 	// 1.头插法
@@ -181,6 +212,18 @@ void MainLinkList() {
 	InsertLinkListAfter(&L, 2, e);
 	printf("在第2个位置前插入9后的单链表：");
 	PrintLinkList(L);
+	// 6.删除结点
+	DeleteLinkList(&L, 3, &e);
+	printf("删除第三个结点的值为：%d，删除后的单链表为：", e);
+	PrintLinkList(L);
 	// 7.表长
 	printf("链表长为：%d\n", LengthLinkList(L));
+	// 8.判空
+	if (EmptyLinkList(L))
+		printf("链表不为空\n");
+	else
+		printf("链表为空\n"); 
+	// 9.销毁
+	if(DestroyLinkList(&L))
+		printf("销毁成功\n");
 }
