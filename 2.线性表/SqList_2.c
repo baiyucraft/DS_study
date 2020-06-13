@@ -14,10 +14,10 @@ void SolveSqlist_2() {
 	ElemtType a[5] = { 2,3,5,4,1 };
 	SqList L;
 	InitSqList(&L);
-	CreateList(&L, a, 5);
+	CreateSqList(&L, a, 5);
 	printf("原表：");
-	PrintList(&L);
+	PrintSqList(&L);
 	Inversion(&L);
 	printf("现表：");
-	PrintList(&L);
+	PrintSqList(&L);
 }

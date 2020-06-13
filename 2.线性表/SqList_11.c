@@ -4,7 +4,7 @@
 // 1.空间上不高效（合并然后找中位数）时间o（n），空间o（2n）
 ElemtType MidNum1(SqList* L1, SqList* L2) {
 	SqList L = Merge(L1, L2);
-	PrintList(&L);
+	PrintSqList(&L);
 	return L.data[(L.length / 2) - 1];
 }
 
@@ -74,15 +74,15 @@ void SolveSqlist_11() {
 	ElemtType a[5] = { 1,2,5,7,9 };
 	SqList L1;
 	InitSqList(&L1);
-	CreateList(&L1, a, 5);
+	CreateSqList(&L1, a, 5);
 	ElemtType b[5] = { 1,3,6,7,8 };
 	SqList L2;
 	InitSqList(&L2);
-	CreateList(&L2, b, 5);
+	CreateSqList(&L2, b, 5);
 	printf("表1：");
-	PrintList(&L1);
+	PrintSqList(&L1);
 	printf("表2：");
-	PrintList(&L2);
+	PrintSqList(&L2);
 	printf("中位数：");
 	printf("%d", MidNum2(&L1, &L2));
 }

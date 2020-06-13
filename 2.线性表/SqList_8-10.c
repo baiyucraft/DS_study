@@ -25,10 +25,10 @@ void SolveSqlist_8() {
 	ElemtType a[13] = { 1,2,3,5,6,7,9,12,46,50,57,59,65 };
 	SqList L;
 	InitSqList(&L);
-	CreateList(&L, a, 13);
+	CreateSqList(&L, a, 13);
 	printf("Ô­±í£º");
-	PrintList(&L);
+	PrintSqList(&L);
 	ReverseMN(&L, 5, 8);
 	printf("ÄæÖÃºó£º");
-	PrintList(&L);
+	PrintSqList(&L);
 }

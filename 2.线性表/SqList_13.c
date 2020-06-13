@@ -37,9 +37,9 @@ void SolveSqlist_13() {
 	ElemtType a[6] = { 1,2,3,4,5,6 };
 	SqList L;
 	InitSqList(&L);
-	CreateList(&L, a, 6);
+	CreateSqList(&L, a, 6);
 	printf("原表：");
-	PrintList(&L);
+	PrintSqList(&L);
 	printf("最小正整数为：");
 	printf("%d", FindMissMin(&L));
 }

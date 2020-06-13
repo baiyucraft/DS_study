@@ -23,10 +23,10 @@ void SolveSqlist_1(){
 	int a[5] = { 1, 2, 3, 4, 5 };
 	SqList L;
 	InitSqList(&L);
-	CreateList(&L, a, 5);
+	CreateSqList(&L, a, 5);
 	ElemtType x;
 	DelMin(&L, &x);
-	PrintList(&L);
+	PrintSqList(&L);
 	printf("×îÐ¡ÊÇ%d£»", x);
-	PrintList(&L);
+	PrintSqList(&L);
 }

@@ -19,10 +19,10 @@ void SolveSqlist_6() {
 	ElemtType a[11] = { 1,2,2,2,2,3,3,3,4,4,5 };
 	SqList L;
 	InitSqList(&L);
-	CreateList(&L, a, 11);
+	CreateSqList(&L, a, 11);
 	printf("原表：");
-	PrintList(&L);
+	PrintSqList(&L);
 	DelSame(&L);
 	printf("现表1：");
-	PrintList(&L);
+	PrintSqList(&L);
 }

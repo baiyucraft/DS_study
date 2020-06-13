@@ -22,7 +22,7 @@ void SearchX(SqList* L, ElemtType x) {
 	}
 	// 反之加入
 	else {
-		InsertList(L, i + 1, x);
+		InsertSqList(L, i + 1, x);
 	}
 }
 
@@ -30,10 +30,10 @@ void SolveSqlist_9() {
 	ElemtType a[13] = { 1,2,3,5,6,7,9,12,46,50,57,59,65 };
 	SqList L;
 	InitSqList(&L);
-	CreateList(&L, a, 13);
+	CreateSqList(&L, a, 13);
 	printf("原表：");
-	PrintList(&L);
+	PrintSqList(&L);
 	SearchX(&L, 59);
 	printf("查找后：");
-	PrintList(&L);
+	PrintSqList(&L);
 }

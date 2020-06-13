@@ -28,13 +28,13 @@ void SolveSqlist_3() {
 	ElemtType a[10] = { 1,2,1,2,3,5,6,4,2,1 };
 	SqList L;
 	InitSqList(&L);
-	CreateList(&L, a, 10);
+	CreateSqList(&L, a, 10);
 	printf("原表：");
-	PrintList(&L);
+	PrintSqList(&L);
 	DelX1(&L, 1);
 	printf("现表1：");
-	PrintList(&L);
+	PrintSqList(&L);
 	DelX2(&L, 2);
 	printf("现表2：");
-	PrintList(&L);
+	PrintSqList(&L);
 }

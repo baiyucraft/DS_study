@@ -20,21 +20,21 @@ typedef struct {
 // 初始化顺序表
 void InitSqList(SqList* L);
 // 1、创造表（初始数据）；a[]为初始化数组，n为数组长度
-int CreateList(SqList* L, ElemtType a[], int n);
+int CreateSqList(SqList* L, ElemtType a[], int n);
 // 2、插入元素；i为插入位置，e为插入数据
-int InsertList(SqList* L, int i, ElemtType e);
+int InsertSqList(SqList* L, int i, ElemtType e);
 // 3、删除元素；删除第i个元素，并返回e
-int DeleteList(SqList* L, int i, ElemtType* e);
+int DeleteSqList(SqList* L, int i, ElemtType* e);
 // 4、按值查找元素；查找元素值为e的元素，返回位置
-int LocateElem(SqList* L, ElemtType e);
+int LocateSqListElem(SqList* L, ElemtType e);
 // 5、按位查找元素；查找位置i的元素
-ElemtType GetElem(SqList* L, int i);
+ElemtType GetSqListElem(SqList* L, int i);
 // 6、判空
-int Empty(SqList* L);
+int EmptySqList(SqList* L);
 // 7、销毁表
-int DestoryList(SqList* L);
+int DestorySqList(SqList* L);
 // 8、打印表
-void PrintList(SqList* L);
+void PrintSqList(SqList* L);
 
 // 功能测试
 void MainSqList();

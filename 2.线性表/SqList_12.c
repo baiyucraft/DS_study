@@ -51,9 +51,9 @@ void SolveSqlist_12() {
 	ElemtType a[6] = { 1,5,5,3,5,2 };
 	SqList L;
 	InitSqList(&L);
-	CreateList(&L, a, 6);
+	CreateSqList(&L, a, 6);
 	printf("原表：");
-	PrintList(&L);
+	PrintSqList(&L);
 	printf("主元素：");
 	printf("%d", Majarity(&L));
 }
