@@ -30,8 +30,9 @@ int main() {
         // 13
         //SolveSqlist_13();
     }
-    // µ•¡¥±ÌLinkList
+    // ¡¥±ÌLinkList°¢DLinkList
     {
-        MainLinkList();
+        //MainLinkList();
+        MainDLinkList();
     }
 }
