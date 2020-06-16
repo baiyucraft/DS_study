@@ -53,7 +53,7 @@ void SolveSqlist_3();
 // 4.5.(思想一样)
     // 自己写法
 int DelS_T1(SqList * L, ElemtType s, ElemtType t);
-// 答案写法
+    // 答案写法
 int DelS_T2(SqList * L, ElemtType s, ElemtType t);
 void SolveSqlist_4();
 // 6.

@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include "SqList.h"
 #include "LinkList.h"
+#include "DLinkList.h"
 
 
 int main() {
@@ -33,6 +34,7 @@ int main() {
     // ¡¥±ÌLinkList°¢DLinkList
     {
         //MainLinkList();
-        MainDLinkList();
+        //MainDLinkList();
+        SolveLinkList1();
     }
 }

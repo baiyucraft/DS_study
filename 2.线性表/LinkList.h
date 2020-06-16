@@ -34,6 +34,21 @@ int DestroyLinkList(LinkList* L);
 // 10.打印单链表
 void PrintLinkList(LinkList L);
 
+//拓展
+// 1Un.创建不带头结点的单链表
+void CreateUnLinkList(LinkList* L);
+// 2Un.打印不带头结点的单链表
+void PrintUnLinkList(LinkList L);
+
 // 功能测试
 void MainLinkList();
+
+// 题目解答
+// 1.
+// 王道书上的题解，因为C中没有引用，书上的思想无法实现
+void LinkList_DeLX1(LinkList* L, ElemtType x);
+// LeetCode上的递归想法
+LinkList LinkList_DeLX2(LinkList L, ElemtType x);
+void SolveLinkList1();
+// 2.
 #endif // !_LINKLIST_H_

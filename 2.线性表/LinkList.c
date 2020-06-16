@@ -185,6 +185,38 @@ void PrintLinkList(LinkList L) {
 	printf("NULL\n");
 }
 
+// 1Un.创建不带头结点的单链表
+void CreateUnLinkList(LinkList* L) {
+	ElemtType x;
+	LNode* s;
+	*L = (LinkList)malloc(sizeof(LNode));
+	printf("请输入数(输入9999结束)：");
+	scanf("%d", &x);
+	(*L)->data = x;
+	printf("请输入数(输入9999结束)：");
+	scanf("%d", &x);
+	LNode* r = *L;
+	while (x != 9999) {
+		s = (LNode*)malloc(sizeof(LNode));
+		s->data = x;
+		r->next = s;
+		r = s;
+		printf("请输入数(输入9999结束)：");
+		scanf("%d", &x);
+	}
+	r->next = NULL;
+}
+
+// 2Un.打印不带头结点的单链表
+void PrintUnLinkList(LinkList L) {
+	LNode* p = L;
+	while (p != NULL) {
+		printf("%d->", p->data);
+		p = p->next;
+	}
+	printf("NULL\n");
+}
+
 // 功能实现
 void MainLinkList() {
 	LinkList L;
@@ -228,3 +260,4 @@ void MainLinkList() {
 	if(DestroyLinkList(&L))
 		printf("销毁成功\n");
 }
+
