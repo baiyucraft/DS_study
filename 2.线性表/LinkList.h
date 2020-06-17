@@ -45,10 +45,24 @@ void MainLinkList();
 
 // 题目解答
 // 1.
-// 王道书上的题解，因为C中没有引用，书上的思想无法实现
-void LinkList_DeLX1(LinkList* L, ElemtType x);
+// 王道书上的递归题解，因为C中没有引用，书上的思想无法实现
+void LinkList_DelX1(LinkList* L, ElemtType x);
 // LeetCode上的递归想法
-LinkList LinkList_DeLX2(LinkList L, ElemtType x);
+LinkList LinkList_DelX2(LinkList L, ElemtType x);
 void SolveLinkList1();
 // 2.
+// 从头至尾扫描单链表，pre指向当前结点p的前驱结点
+void LinkList_DelX3(LinkList* L, ElemtType x);
+// 用p指针扫描所有结点，将值等于x的释放，不等于x的链接到L之后
+void LinkList_DelX4(LinkList* L, ElemtType x);
+void SolveLinkList2();
+// 3.
+// 反向打印，通过递归
+void RPrintLinkList(LinkList L);
+void SolveLinkList3();
+//4.
+// 删除最小值
+void DelMinLinkList(LinkList* L);
+void SolveLinkList4();
+
 #endif // !_LINKLIST_H_

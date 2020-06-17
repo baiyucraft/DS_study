@@ -35,6 +35,13 @@ int main() {
     {
         //MainLinkList();
         //MainDLinkList();
-        SolveLinkList1();
+        //1.
+        //SolveLinkList1();
+        //2.
+        //SolveLinkList2();
+        //3.
+        //SolveLinkList3();
+        //4.
+        SolveLinkList4();
     }
 }
