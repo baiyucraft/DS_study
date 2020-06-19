@@ -64,5 +64,31 @@ void SolveLinkList3();
 // 删除最小值
 void DelMinLinkList(LinkList* L);
 void SolveLinkList4();
+//5.
+// 摘下头结点，以第一个元素为起点，采用头插法重新插入建立链表
+void ReverseLinkList1(LinkList* L);
+// 遍历链表，将每个结点的指针域反转，其中原第一个结点的指针域为NULL，头结点指向原表最后一个结点
+void ReverseLinkList2(LinkList* L);
+void SolveLinkList5();
+//6.
+// 用直接插入排序，遍历结点并插入
+void SortLinkList(LinkList* L);
+void SolveLinkList6();
+//7.
+// 从头至尾扫描单链表，pre指向当前结点p的前驱结点
+void LinkListDelMinMax(LinkList* L, ElemtType min, ElemtType max);
+void SolveLinkList7();
+//8.
+// 先减去相差的长度dist，再分别遍历找到公共结点
+LinkList SearchLinkList1st(LinkList L1, LinkList L2);
+// 创建两个有公共结点的链表
+void CreateComLinkList(LinkList* L1, LinkList* L2);
+void SolveLinkList8();
+//9.
+// 升序输出并删除
+void LinkListDelMinP(LinkList* L);
+void SolveLinkList9();
+//10.
+
 
 #endif // !_LINKLIST_H_
