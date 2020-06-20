@@ -32,6 +32,9 @@ int main() {
         //SolveLinkList6();
         //SolveLinkList7();
         //SolveLinkList8();
-        SolveLinkList9();
+        //SolveLinkList9();
+        //SolveLinkList10();
+        //SolveLinkList11();
+        SolveLinkList12();
     }
 }

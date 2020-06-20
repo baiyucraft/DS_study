@@ -89,6 +89,16 @@ void SolveLinkList8();
 void LinkListDelMinP(LinkList* L);
 void SolveLinkList9();
 //10.
-
+// 将链表A分为奇数链表A和偶数链表A
+LinkList DisCreateLinkList1(LinkList* A);
+void SolveLinkList10();
+//11.
+// 将链表A分为奇数链表A和逆置后的偶数链表B
+LinkList DisCreateLinkList2(LinkList* A);
+void SolveLinkList11();
+//12.
+// 删除递增有序单链表中相同的元素
+void LinkListDelSame(LinkList* L);
+void SolveLinkList12();
 
 #endif // !_LINKLIST_H_
