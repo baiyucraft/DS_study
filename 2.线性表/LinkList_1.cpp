@@ -3,24 +3,21 @@
 #include "LinkList.h"
 
 // 王道书上的题解，因为C中没有引用，书上的思想无法实现
-// 原题解采用C++中的引用，通过同一个指针传参实现L->next->next的递归调用，所以不会断链
-void LinkList_DelX1(LinkList* L, ElemtType x) {
-	if ((*L) == NULL) {
+// 原题解采用C++中的引用，通过同一个引用传参实现L->next->next的递归调用，所以不会断链
+// &L实际是一个地址，递归的是上一层的L->next
+void LinkList_DelX1(LinkList& L, ElemtType x) {
+	if (L == NULL) {
 		printf("删除成功");
 		return;
-	}	
-	printf("%d\n", (*L)->data);
-	if ((*L)->data == x) {
-		LNode* p = *L;
-		//printf("%d\n", p->data);
-		*L = (*L)->next;
+	}
+	if (L->data == x) {
+		LNode* p = L;
+		L = L->next;
 		free(p);
 		LinkList_DelX1(L, x);
 	}
 	else {
-		printf("this");
-		(*L) = (*L)->next;
-		LinkList_DelX1(L, x);
+		LinkList_DelX1(L->next, x);
 	}
 }
 // LeetCode上的递归想法
@@ -42,13 +39,13 @@ LinkList LinkList_DelX2(LinkList L, ElemtType x){
 
 void SolveLinkList1() {
 	LinkList L;
-	CreateUnLinkList(&L);
+	CreateUnLinkList(L);
 	PrintUnLinkList(L);
 	ElemtType x;
 	printf("请输入要删除的数：");
 	scanf("%d", &x);
-	//LinkList_DelX1(&L, x);
-	L = LinkList_DelX2(L, x);
+	LinkList_DelX1(L, x);
+	//L = LinkList_DelX2(L, x);
 	printf("删除所有%d后的链表为：", x);
 	PrintUnLinkList(L);
 }

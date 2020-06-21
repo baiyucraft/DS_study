@@ -42,15 +42,15 @@ LinkList SearchLinkList1st(LinkList L1, LinkList L2) {
 }
 
 // 创建两个有公共结点的链表
-void CreateComLinkList(LinkList* L1, LinkList* L2) {
+void CreateComLinkList(LinkList& L1, LinkList& L2) {
 	ElemtType x;
 	// 新增结点
 	LNode* s;
 	// 尾指针r1、r2指向两个表的表尾结点
-	LNode* r1 = (*L1)->next;
+	LNode* r1 = L1->next;
 	while (r1->next != NULL)
 		r1 = r1->next;
-	LNode* r2 = (*L2)->next;
+	LNode* r2 = L2->next;
 	while (r2->next != NULL)
 		r2 = r2->next;
 	// 输入数据
@@ -73,11 +73,11 @@ void CreateComLinkList(LinkList* L1, LinkList* L2) {
 void SolveLinkList8() {
 	LinkList L1, L2;
 	printf("请输入第一个链表的不公共结点:\n");
-	HeadInsertLinkList(&L1);
+	HeadInsertLinkList(L1);
 	printf("请输入第二个链表的不公共结点:\n");
-	HeadInsertLinkList(&L2);
+	HeadInsertLinkList(L2);
 	printf("请输入两个链表的公共结点:\n");
-	CreateComLinkList(&L1, &L2);
+	CreateComLinkList(L1, L2);
 	printf("L1：");
 	PrintLinkList(L1);
 	printf("L2：");

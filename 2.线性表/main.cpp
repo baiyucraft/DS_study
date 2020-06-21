@@ -35,6 +35,7 @@ int main() {
         //SolveLinkList9();
         //SolveLinkList10();
         //SolveLinkList11();
-        SolveLinkList12();
+        //SolveLinkList12();
+        //SolveLinkList13();
     }
 }

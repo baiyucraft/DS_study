@@ -2,31 +2,31 @@
 #include "SqList.h"
 
 // 1.空间上不高效（合并然后找中位数）时间o（n），空间o（2n）
-ElemtType MidNum1(SqList* L1, SqList* L2) {
+ElemtType MidNum1(SqList& L1, SqList& L2) {
 	SqList L = Merge(L1, L2);
-	PrintSqList(&L);
+	PrintSqList(L);
 	return L.data[(L.length / 2) - 1];
 }
 
 // 2.分别取中位数比较（空间高效）--答案题解 时间o（log2 n），空间o（1）
-ElemtType MidNum2(SqList* L1, SqList* L2) {
-	if (L1->length != L2->length) {
+ElemtType MidNum2(SqList& L1, SqList& L2) {
+	if (L1.length != L2.length) {
 		printf("两个表不一样长");
 		return 0;
 	}
 	// 分别表示L1、L2的第一个元素，最后一个元素，中位数
-	int first1 = 0, after1 = L1->length - 1, mid1;
-	int first2 = 0, after2 = L2->length - 1, mid2;
+	int first1 = 0, after1 = L1.length - 1, mid1;
+	int first2 = 0, after2 = L2.length - 1, mid2;
 	// 直到首尾元素指针变为同一个（L1、L2均只剩一个元素），该值取较小的元素
 	while (first1 != after1 || first2 != after2) {
 		mid1 = (first1 + after1) / 2;
 		mid2 = (first2 + after2) / 2;
 		// 如果L1的中位数和L2的中位数相等，返回该值
-		if (L1->data[mid1] == L2->data[mid2]) {
-			return L1->data[mid1];
+		if (L1.data[mid1] == L2.data[mid2]) {
+			return L1.data[mid1];
 		}
 		// 如果L1的中位数 < L2的中位数，舍弃L1的前半部分，L2的后半部分（这里要保证舍弃长度相等）
-		if (L1->data[mid1] < L2->data[mid2]) {
+		if (L1.data[mid1] < L2.data[mid2]) {
 			// 若长度为奇数，中位数左右元素相等，舍弃前后即可
 			if ((first1 + after1) % 2 == 0) {
 				first1 = mid1;
@@ -53,7 +53,7 @@ ElemtType MidNum2(SqList* L1, SqList* L2) {
 		}
 	}
 	// 返回较小的（因为两个顺序表的和为偶数个，取小的）
-	return L1->data[first1] < L2->data[first2] ? L1->data[first1] : L2->data[first2];
+	return L1.data[first1] < L2.data[first2] ? L1.data[first1] : L2.data[first2];
 }
 /*
 2.分析：
@@ -73,16 +73,16 @@ ElemtType MidNum2(SqList* L1, SqList* L2) {
 void SolveSqlist_11() {
 	ElemtType a[5] = { 1,2,5,7,9 };
 	SqList L1;
-	InitSqList(&L1);
-	CreateSqList(&L1, a, 5);
+	InitSqList(L1);
+	CreateSqList(L1, a, 5);
 	ElemtType b[5] = { 1,3,6,7,8 };
 	SqList L2;
-	InitSqList(&L2);
-	CreateSqList(&L2, b, 5);
+	InitSqList(L2);
+	CreateSqList(L2, b, 5);
 	printf("表1：");
-	PrintSqList(&L1);
+	PrintSqList(L1);
 	printf("表2：");
-	PrintSqList(&L2);
+	PrintSqList(L2);
 	printf("中位数：");
-	printf("%d", MidNum2(&L1, &L2));
+	printf("%d", MidNum2(L1, L2));
 }

@@ -13,7 +13,7 @@ void RPrintLinkList(LinkList L){
 
 void SolveLinkList3() {
 	LinkList L;
-	TailInsertLinkList(&L);
+	TailInsertLinkList(L);
 	printf("链表正序为：");
 	PrintLinkList(L);
 	printf("链表反向为：");

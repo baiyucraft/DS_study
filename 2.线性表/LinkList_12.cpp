@@ -3,9 +3,9 @@
 #include "LinkList.h"
 
 // 删除递增有序单链表中相同的元素
-void LinkListDelSame(LinkList* L) {
+void LinkListDelSame(LinkList& L) {
 	// 工作结点p
-	LNode* p = (*L)->next;
+	LNode* p = L->next;
 	// 要删除结点q
 	LNode* q;
 	// 空链表返回
@@ -26,10 +26,10 @@ void LinkListDelSame(LinkList* L) {
 
 void SolveLinkList12() {
 	LinkList L;
-	TailInsertLinkList(&L);
+	TailInsertLinkList(L);
 	printf("原链表为：");
 	PrintLinkList(L);
-	LinkListDelSame(&L);
+	LinkListDelSame(L);
 	printf("删除重复后的链表为：");
 	PrintLinkList(L);
 }

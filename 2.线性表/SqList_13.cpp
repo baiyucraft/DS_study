@@ -12,21 +12,21 @@
 									  若顺序表中有一项不是1-n中的，假设第i项，那不管缺项元素是啥，最小正整数就是第i项
 3-遍历数组Temp，取最小Temp[i]=0的值，
 */
-ElemtType FindMissMin(SqList* L) {
+ElemtType FindMissMin(SqList& L) {
 	int i;
 	ElemtType* Temp;
 	// 给辅助数组动态分配空间
-	Temp = (ElemtType*)malloc(sizeof(ElemtType) * L->length);
+	Temp = (ElemtType*)malloc(sizeof(ElemtType) * L.length);
 	// 给数组空间中的每个字节赋值为0，这里就相当于赋值为0
-	memset(Temp, 0, sizeof(ElemtType) * L->length);
+	memset(Temp, 0, sizeof(ElemtType) * L.length);
 	// 遍历表找到是否属于1-n的数
-	for (i = 0; i < L->length; i++) {
-		if (L->data[i] > 0 && L->data[i] <= L->length) {
-			Temp[L->data[i] - 1] = 1;
+	for (i = 0; i < L.length; i++) {
+		if (L.data[i] > 0 && L.data[i] <= L.length) {
+			Temp[L.data[i] - 1] = 1;
 		}
 	}
 	// 找到最小正整数
-	for (i = 0; i < L->length; i++) {
+	for (i = 0; i < L.length; i++) {
 		if (Temp[i] == 0)
 			break;
 	}
@@ -36,10 +36,10 @@ ElemtType FindMissMin(SqList* L) {
 void SolveSqlist_13() {
 	ElemtType a[6] = { 1,2,3,4,5,6 };
 	SqList L;
-	InitSqList(&L);
-	CreateSqList(&L, a, 6);
+	InitSqList(L);
+	CreateSqList(L, a, 6);
 	printf("原表：");
-	PrintSqList(&L);
+	PrintSqList(L);
 	printf("最小正整数为：");
-	printf("%d", FindMissMin(&L));
+	printf("%d", FindMissMin(L));
 }

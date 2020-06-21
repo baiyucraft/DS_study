@@ -3,11 +3,11 @@
 #include "LinkList.h"
 
 // 从头至尾扫描单链表，pre指向当前结点p的前驱结点
-void LinkListDelMinMax(LinkList* L, ElemtType min,ElemtType max) {
+void LinkListDelMinMax(LinkList& L, ElemtType min,ElemtType max) {
 	// 当前结点p
-	LNode* p = (*L)->next;
+	LNode* p = L->next;
 	// p的前驱结点pre
-	LNode* pre = (*L);
+	LNode* pre = L;
 	// 用来存放要删除的结点
 	LNode* q;
 	while (p != NULL) {
@@ -31,12 +31,12 @@ void LinkListDelMinMax(LinkList* L, ElemtType min,ElemtType max) {
 
 void SolveLinkList7() {
 	LinkList L;
-	TailInsertLinkList(&L);
+	TailInsertLinkList(L);
 	printf("原链表为：");
 	PrintLinkList(L);
 	ElemtType min = 2;
 	ElemtType max = 5;
-	LinkListDelMinMax(&L, min, max);
+	LinkListDelMinMax(L, min, max);
 	printf("删除%d与%d之间的数后的链表为：", min, max);
 	PrintLinkList(L);
 }

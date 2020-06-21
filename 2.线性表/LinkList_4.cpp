@@ -3,10 +3,10 @@
 #include "LinkList.h"
 
 // 删除最小值
-void DelMinLinkList(LinkList* L) {
+void DelMinLinkList(LinkList& L) {
 	// 遍历时的前驱结点pre和当前结点p
-	LNode* pre = *L;
-	LNode* p = (*L)->next;
+	LNode* pre = L;
+	LNode* p = L->next;
 	// 储存最小值的前驱结点minpre和最小值结点p
 	LNode* minpre = pre;
 	LNode* minp = p;
@@ -24,10 +24,10 @@ void DelMinLinkList(LinkList* L) {
 
 void SolveLinkList4() {
 	LinkList L;
-	TailInsertLinkList(&L);
+	TailInsertLinkList(L);
 	printf("原链表为：");
 	PrintLinkList(L);
-	DelMinLinkList(&L);
+	DelMinLinkList(L);
 	printf("删除最小值后的链表为：");
 	PrintLinkList(L);
 }

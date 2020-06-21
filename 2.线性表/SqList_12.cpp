@@ -12,15 +12,15 @@
 		此时主元素可能存在，故验证是否出现次数大于n/2
 */
 // 参考答案
-ElemtType Majarity(SqList* L) {
+ElemtType Majarity(SqList L) {
 	// count计数
 	int i, count = 1;
-	// this表示候选主元素
-	int this = L->data[0];
+	// m表示候选主元素
+	int m = L.data[0];
 	// 遍历顺序表
-	for (i = 1; i < L->length; i++) {
-		// 如果第i+1个元素等于this，++
-		if (L->data[i] == this)
+	for (i = 1; i < L.length; i++) {
+		// 如果第i+1个元素等于m，++
+		if (L.data[i] == m)
 			count++;
 		// 不等于
 		else {
@@ -30,7 +30,7 @@ ElemtType Majarity(SqList* L) {
 			}
 			// 重新选定候选主元素
 			else {
-				this = L->data[i];
+				m = L.data[i];
 				count = 1;
 			}
 		}
@@ -38,22 +38,24 @@ ElemtType Majarity(SqList* L) {
 	// 如果count不为0，判断候选主元素是否为真正的主元素
 	if (count > 0) {
 		count = 0;
-		for (i = 0; i < L->length; i++) {
-			if (L->data[i] == this) {
+		for (i = 0; i < L.length; i++) {
+			if (L.data[i] == m) {
 				count++;
 			}
 		}
 	}
-	return count > L->length / 2 ? this : -1;
+	return count > L.length / 2 ? m : -1;
 }
 
 void SolveSqlist_12() {
-	ElemtType a[6] = { 1,5,5,3,5,2 };
+	//ElemtType a[6] = { 1,5,5,3,5,2 };
+	ElemtType a[7] = { 1,5,5,3,5,2,5 };
 	SqList L;
-	InitSqList(&L);
-	CreateSqList(&L, a, 6);
+	InitSqList(L);
+	//CreateSqList(L, a, 6);
+	CreateSqList(L, a, 7);
 	printf("原表：");
-	PrintSqList(&L);
+	PrintSqList(L);
 	printf("主元素：");
-	printf("%d", Majarity(&L));
+	printf("%d", Majarity(L));
 }

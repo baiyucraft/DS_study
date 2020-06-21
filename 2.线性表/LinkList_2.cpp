@@ -3,11 +3,11 @@
 #include "LinkList.h"
 
 // 从头至尾扫描单链表，pre指向当前结点p的前驱结点
-void LinkList_DelX3(LinkList* L, ElemtType x) {
+void LinkList_DelX3(LinkList& L, ElemtType x) {
 	// 当前结点p
-	LNode* p = (*L)->next;
+	LNode* p = L->next;
 	// p的前驱结点pre
-	LNode* pre = (*L);
+	LNode* pre = L;
 	// 用来存放要删除的结点
 	LNode* q;
 	while (p != NULL){
@@ -29,11 +29,11 @@ void LinkList_DelX3(LinkList* L, ElemtType x) {
 	}
 }
 // 用p指针扫描所有结点，将值等于x的释放，不等于x的链接到L之后
-void LinkList_DelX4(LinkList* L, ElemtType x) {
+void LinkList_DelX4(LinkList& L, ElemtType x) {
 	// 当前结点p
-	LNode* p = (*L)->next;
+	LNode* p = L->next;
 	// L的尾结点r，初值为头结点
-	LNode* r = *L;
+	LNode* r = L;
 	// 要删除结点q
 	LNode* q;
 	while (p != NULL) {
@@ -59,18 +59,18 @@ void LinkList_DelX4(LinkList* L, ElemtType x) {
 }
 void SolveLinkList2() {
 	LinkList L;
-	TailInsertLinkList(&L);
+	TailInsertLinkList(L);
 	printf("原链表为：");
 	PrintLinkList(L);
 	ElemtType x;
 	printf("请输入要删除的数：");
 	scanf("%d", &x);
-	LinkList_DelX3(&L, x);
+	LinkList_DelX3(L, x);
 	printf("删除所有%d后的链表为：", x);
 	PrintLinkList(L);
 	printf("请输入要删除的数：");
 	scanf("%d", &x);
-	LinkList_DelX4(&L, x);
+	LinkList_DelX4(L, x);
 	printf("删除所有%d后的链表为：", x);
 	PrintLinkList(L);
 }
