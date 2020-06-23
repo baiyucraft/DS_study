@@ -37,5 +37,11 @@ int main() {
         //SolveLinkList11();
         //SolveLinkList12();
         //SolveLinkList13();
+        //SolveLinkList14();
+        //SolveLinkList15();
+        //SolveLinkList16();
+        //SolveDLinkList17();
+        //SolveLinkList18();
+        SolveLinkList19();
     }
 }

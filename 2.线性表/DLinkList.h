@@ -10,9 +10,9 @@ typedef struct DNode {
 	struct DNode* prior, * next;
 }DNode, * DLinkList;
 
-// 1.头插法建立单链表：从头结点后插入，生成链表元素顺序与输入顺序相反
+// 1.头插法建立链表：从头结点后插入，生成链表元素顺序与输入顺序相反
 DLinkList HeadInsertDLinkList(DLinkList& L);
-// 2.尾插法建立单链表：从已完成链表尾部插入，生成链表元素顺序与输入顺序相同（需要一个尾指针r辅助）
+// 2.尾插法建立链表：从已完成链表尾部插入，生成链表元素顺序与输入顺序相同（需要一个尾指针r辅助）
 DLinkList TailInsertDLinkList(DLinkList& L);
 // 3.按序号查找结点, 查找第i个元素
 DNode* GetDLinkListElem(DLinkList L, int i);
@@ -24,16 +24,26 @@ bool InsertDLinkList(DLinkList& L, int i, ElemtType e);
 bool InsertDLinkListAfter(DLinkList& L, int i, ElemtType e);
 // 6.删除结点，删除第i个结点，并返回被删除的元素
 bool DeleteDLinkList(DLinkList& L, int i, ElemtType& e);
-// 7.获取单链表的长度
+// 7.获取链表的长度
 int LengthDLinkList(DLinkList L);
 // 8.判空
 int EmptyDLinkList(DLinkList L);
-// 9.销毁单链表
+// 9.销毁链表
 int DestroyDLinkList(DLinkList& L);
 // 10.打印单链表
 void PrintDLinkList(DLinkList L);
 
+// 循环双链表部分功能
+// cir1.尾插建立循环双链表
+DLinkList TailInsertCirDLinkList(DLinkList& L);
+// cir2.打印循环双链表
+void PrintCirDLinkList(DLinkList L);
+
 // 功能测试
 void MainDLinkList();
 
+// 1.
+// 判别双链表是否对称
+bool SymmertryCirDLinkList(DLinkList L);
+void SolveDLinkList17();
 #endif // !_DLINKLIST_H_

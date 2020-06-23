@@ -12,7 +12,7 @@
 	而如果函数只会修改指针所指向的内容,而不会更改指针的值,那么用LinkList L就行了;
 */
 
-// 1.头插法建立单链表：在头结点与第一个结点之间插入，生成链表元素顺序与输入顺序相反，时间：o(n)
+// 1.头插法建立链表：在头结点与第一个结点之间插入，生成链表元素顺序与输入顺序相反，时间：o(n)
 DLinkList HeadInsertDLinkList(DLinkList& L) {
 	ElemtType x;
 	DNode* s;
@@ -41,7 +41,7 @@ DLinkList HeadInsertDLinkList(DLinkList& L) {
 	}
 	return L;
 }
-// 2.尾插法建立单链表：从已完成链表尾部插入，生成链表元素顺序与输入顺序相同（需要一个尾指针r辅助），时间：o(n)
+// 2.尾插法建立链表：从已完成链表尾部插入，生成链表元素顺序与输入顺序相同（需要一个尾指针r辅助），时间：o(n)
 DLinkList TailInsertDLinkList(DLinkList& L) {
 	ElemtType x;
 	// 新增结点
@@ -161,7 +161,7 @@ bool DeleteDLinkList(DLinkList& L, int i, ElemtType& e) {
 	free(q);
 	return true;
 }
-// 7.获取单链表的长度
+// 7.获取链表的长度
 int LengthDLinkList(DLinkList L) {
 	DNode* p = L->next;
 	int i = 0;
@@ -178,7 +178,7 @@ int EmptyDLinkList(DLinkList L) {
 	}
 	return 0;
 }
-// 9.销毁单链表
+// 9.销毁链表
 int DestroyDLinkList(DLinkList& L) {
 	// 获取第一个结点
 	DNode* p = L->next;
@@ -196,7 +196,7 @@ int DestroyDLinkList(DLinkList& L) {
 	free(L);
 	return 1;
 }
-// 10.打印单链表
+// 10.打印链表
 void PrintDLinkList(DLinkList L) {
 	printf("头结点<->");
 	DNode* p = L->next;
@@ -205,6 +205,47 @@ void PrintDLinkList(DLinkList L) {
 		p = p->next;
 	}
 	printf("NULL\n");
+}
+
+// cir1.尾插建立循环双链表
+DLinkList TailInsertCirDLinkList(DLinkList& L) {
+	ElemtType x;
+	// 新增结点
+	DNode* s;
+	// 初始化双链表，创建头结点
+	L = (DLinkList)malloc(sizeof(DNode));
+	L->next = NULL;
+	// 尾指针r指向表尾结点
+	DNode* r = L;
+	// 输入数据
+	printf("请输入数(输入9999结束)：");
+	scanf("%d", &x);
+	while (x != 9999) {
+		s = (DNode*)malloc(sizeof(DNode));
+		// 数据域data为当前输入的x
+		s->data = x;
+		// s的前驱指针指向尾结点r
+		s->prior = r;
+		// 尾结点r的后继指针指向新结点s
+		r->next = s;
+		r = s;
+		printf("请输入数(输入9999结束)：");
+		scanf("%d", &x);
+	}
+	r->next = L;
+	L->prior = r;
+	return L;
+}
+
+// cir2.打印循环双链表
+void PrintCirDLinkList(DLinkList L) {
+	printf("头结点<->");
+	DNode* p = L->next;
+	while (p != L) {
+		printf("%d<->", p->data);
+		p = p->next;
+	}
+	printf("头结点\n");
 }
 
 // 功能实现

@@ -39,6 +39,10 @@ void PrintLinkList(LinkList L);
 void CreateUnLinkList(LinkList& L);
 // 2Un.打印不带头结点的单链表
 void PrintUnLinkList(LinkList L);
+// 1Cri.创建循环单链表
+LinkList TailInsertCriLinkList(LinkList& L);
+// 2Cri.打印循环单链表
+void PrintCriLinkList(LinkList L);
 
 // 功能测试
 void MainLinkList();
@@ -60,45 +64,69 @@ void SolveLinkList2();
 // 反向打印，通过递归
 void RPrintLinkList(LinkList L);
 void SolveLinkList3();
-//4.
+// 4.
 // 删除最小值
 void DelMinLinkList(LinkList& L);
 void SolveLinkList4();
-//5.
+// 5.
 // 摘下头结点，以第一个元素为起点，采用头插法重新插入建立链表
 void ReverseLinkList1(LinkList& L);
 // 遍历链表，将每个结点的指针域反转，其中原第一个结点的指针域为NULL，头结点指向原表最后一个结点
 void ReverseLinkList2(LinkList& L);
 void SolveLinkList5();
-//6.
+// 6.
 // 用直接插入排序，遍历结点并插入
 void SortLinkList(LinkList& L);
 void SolveLinkList6();
-//7.
+// 7.
 // 从头至尾扫描单链表，pre指向当前结点p的前驱结点
 void LinkListDelMinMax(LinkList& L, ElemtType min, ElemtType max);
 void SolveLinkList7();
-//8.
+// 8.
 // 先减去相差的长度dist，再分别遍历找到公共结点
 LinkList SearchLinkList1st(LinkList L1, LinkList L2);
 // 创建两个有公共结点的链表
 void CreateComLinkList(LinkList& L1, LinkList& L2);
 void SolveLinkList8();
-//9.
+// 9.
 // 升序输出并删除
 void LinkListDelMinP(LinkList& L);
 void SolveLinkList9();
-//10.
+// 10.
 // 将链表A分为奇数链表A和偶数链表A
 LinkList DisCreateLinkList1(LinkList& A);
 void SolveLinkList10();
-//11.
+// 11.
 // 将链表A分为奇数链表A和逆置后的偶数链表B
 LinkList DisCreateLinkList2(LinkList& A);
 void SolveLinkList11();
-//12.
+// 12.
 // 删除递增有序单链表中相同的元素
 void LinkListDelSame(LinkList& L);
 void SolveLinkList12();
+// 13.
+// 合并两个递增有序的单链表L1、L2，合并成递减（采用头插法）
+void MergeLinkList(LinkList& L1, LinkList& L2);
+void SolveLinkList13();
+// 14.
+// 将递增的L1、L2链表的公共结点放入L3
+LinkList GetLinkListCom(LinkList L1, LinkList L2);
+void SolveLinkList14();
+// 15.
+// 将L1、L2链表的相同项放L1中，其余结点释放
+void UnionLinkList(LinkList& L1, LinkList& L2);
+void SolveLinkList15();
+// 16.
+// 字符串模式匹配的链表形式，这是最基本的算法，匹配L1中含L2
+bool PatternLinkList1(LinkList L1, LinkList L2);
+void SolveLinkList16();
+// 18.
+// 将两个循环单链表h2连接到h1后面
+void LinkCriLinkList(LinkList& h1, LinkList& h2);
+void SolveLinkList18();
+// 19.
+// 遍历循环单链表，每次删除最小值结点并输出
+void DelAllMinCriLinkList(LinkList& L);
+void SolveLinkList19();
 
 #endif // !_LINKLIST_H_

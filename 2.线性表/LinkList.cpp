@@ -218,6 +218,42 @@ void PrintUnLinkList(LinkList L) {
 	printf("NULL\n");
 }
 
+// 1Cri.创建循环单链表
+LinkList TailInsertCriLinkList(LinkList& L) {
+	ElemtType x;
+	// 新增结点
+	LNode* s;
+	// 初始化单链表，创建头结点
+	L = (LinkList)malloc(sizeof(LNode));
+	L->next = NULL;
+	// 尾指针r指向表尾结点
+	LNode* r = L;
+	// 输入数据
+	printf("请输入数(输入9999结束)：");
+	scanf("%d", &x);
+	while (x != 9999) {
+		s = (LNode*)malloc(sizeof(LNode));
+		s->data = x;
+		r->next = s;
+		r = s;
+		printf("请输入数(输入9999结束)：");
+		scanf("%d", &x);
+	}
+	r->next = L;
+	return L;
+}
+
+// 2Cri.打印循环单链表
+void PrintCriLinkList(LinkList L) {
+	printf("头结点->");
+	LNode* p = L->next;
+	while (p != L) {
+		printf("%d->", p->data);
+		p = p->next;
+	}
+	printf("头结点\n");
+}
+
 // 功能实现
 void MainLinkList() {
 	LinkList L;
