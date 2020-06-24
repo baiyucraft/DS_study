@@ -128,5 +128,9 @@ void SolveLinkList18();
 // 遍历循环单链表，每次删除最小值结点并输出
 void DelAllMinCriLinkList(LinkList& L);
 void SolveLinkList19();
+// 21.
+// 查找倒数第k个数，
+int SearchLinkListK(LinkList L, int k);
+void SolveLinkList21();
 
 #endif // !_LINKLIST_H_
