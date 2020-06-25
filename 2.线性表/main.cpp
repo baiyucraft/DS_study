@@ -44,6 +44,7 @@ int main() {
         //SolveLinkList18();
         //SolveLinkList19();
         //SolveDLinkList20();
-        SolveLinkList21();
+        //SolveLinkList21();
+        SolveLinkList23();
     }
 }

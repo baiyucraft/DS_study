@@ -82,7 +82,7 @@ void SolveLinkList6();
 // 从头至尾扫描单链表，pre指向当前结点p的前驱结点
 void LinkListDelMinMax(LinkList& L, ElemtType min, ElemtType max);
 void SolveLinkList7();
-// 8.
+// 8-22.
 // 先减去相差的长度dist，再分别遍历找到公共结点
 LinkList SearchLinkList1st(LinkList L1, LinkList L2);
 // 创建两个有公共结点的链表
@@ -132,5 +132,9 @@ void SolveLinkList19();
 // 查找倒数第k个数，
 int SearchLinkListK(LinkList L, int k);
 void SolveLinkList21();
+// 23.
+// n为数组中数的绝对值的范围，保留第一个绝对值为那个值的数（空间换时间）
+void DelAbsLinkList(LinkList& L, int n);
+void SolveLinkList23();
 
 #endif // !_LINKLIST_H_
