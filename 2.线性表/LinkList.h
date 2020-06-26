@@ -136,5 +136,11 @@ void SolveLinkList21();
 // n为数组中数的绝对值的范围，保留第一个绝对值为那个值的数（空间换时间）
 void DelAbsLinkList(LinkList& L, int n);
 void SolveLinkList23();
+// 24.
+// 1.创建带环的单链表
+void CreateRingLinkList(LinkList& L);
+// 2.打印带环的单链表
+void PrintRingLinkList(LinkList L);
+void SolveLinkList24();
 
 #endif // !_LINKLIST_H_
