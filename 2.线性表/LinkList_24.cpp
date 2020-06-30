@@ -33,7 +33,7 @@ void PrintRingLinkList(LinkList L) {
 	printf("%d\n",p->data);
 }
 
-// 检测是否有环，如果有
+// 检测是否有环，如果有，找到环的起点
 LNode* FindLoopStart(LinkList L) {
 	// 设置快fast慢slow两个指针
 	LNode* fast = L->next;

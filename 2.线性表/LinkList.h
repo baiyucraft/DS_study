@@ -141,6 +141,14 @@ void SolveLinkList23();
 void CreateRingLinkList(LinkList& L);
 // 2.打印带环的单链表
 void PrintRingLinkList(LinkList L);
+// 检测是否有环，如果有，找到环的起点
+LNode* FindLoopStart(LinkList L);
 void SolveLinkList24();
+
+// 25.
+// 改变链表数据
+void ChangeLinkList(LinkList& L);
+void SolveLinkList25();
+
 
 #endif // !_LINKLIST_H_
