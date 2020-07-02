@@ -1,9 +1,12 @@
 ﻿#include <stdio.h>
 #include "SqStack.h"
 
-void main() {
+int main() {
 	// 顺序栈
 	{
-		MainSqStack();
+		//MainSqStack();
+		//SolveStack_3();
+		//SolveStack_4();
+		SolveStack_5();
 	}
 }
