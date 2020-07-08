@@ -11,14 +11,6 @@ typedef struct LiStackNode {
 	struct LiStackNode *next;
 }LiStackNode,*LiStackLink;
 
-// 定义字符串链表
-typedef struct LNode {
-	// 数据域
-	char data;
-	// 指针域
-	struct LNode* next;
-}LNode, * LinkList;
-
 // 1.初始化栈
 //void InitSqStack(SqStack& S);
 // 2.进栈

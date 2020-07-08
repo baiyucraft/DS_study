@@ -38,6 +38,7 @@ ElemtType PopSTK(STK& S, int i) {
 		else 
 			return S.stack[S.top[1]++];
 	}
+	return true;
 }
 // ¥Ú”°
 void PrintSqStack(STK S) {
