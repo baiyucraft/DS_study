@@ -19,6 +19,10 @@ int main() {
 		//MainLiQueue();
 		//SolveQueue_1();
 		//SolveQueue_2();
-		SolveQueue_3();
+		//SolveQueue_3();
+	}
+	{
+		//SolveStackQueue_1();
+		SolveStackQueue_2();
 	}
 }

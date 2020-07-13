@@ -56,6 +56,35 @@ bool DestroySqStack(SqStack& S) {
 	return true;
 }
 
+// 1.初始化栈
+void InitSqStrStack(SqStrStack& S) {
+	S.top = -1;
+}
+// 2.进栈
+bool PushSqStrStack(SqStrStack& S, char x) {
+	if (S.top == MaxSize - 1) {
+		printf("栈已满");
+		return false;
+	}
+	S.data[++S.top] = x;
+	return true;
+}
+// 3.出栈
+char PopSqStrStack(SqStrStack& S) {
+	if (S.top == -1) {
+		printf("栈已空");
+		return NULL;
+	}
+	return S.data[S.top--];
+}
+// 4.判栈空
+bool EmptySqStrStack(SqStrStack S) {
+	if (S.top == -1)
+		return true;
+	else
+		return false;
+}
+
 void MainSqStack() {
 	SqStack S;
 	// 初始化栈

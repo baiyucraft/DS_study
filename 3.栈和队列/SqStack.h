@@ -46,6 +46,22 @@ void PrintSqStack(SqStack S);
 // 7.Ïú»ÙÕ»
 bool DestroySqStack(SqStack& S);
 
+// Ë³Ğò×Ö·ûÕ»
+typedef struct {
+	// Õ»ÔªËØ¸öÊı
+	char data[MaxSize];
+	// Õ»¶¥Ö¸Õë
+	int top;
+}SqStrStack;
+// 1.³õÊ¼»¯Ë³Ğò×Ö·ûÕ»
+void InitSqStrStack(SqStrStack& S);
+// 2.½øË³Ğò×Ö·ûÕ»
+bool PushSqStrStack(SqStrStack& S, char x);
+// 3.³öË³Ğò×Ö·ûÕ»
+char PopSqStrStack(SqStrStack& S);
+// 4.ÅĞË³Ğò×Ö·ûÕ»¿Õ
+bool EmptySqStrStack(SqStrStack S);
+
 // ¹¦ÄÜ²âÊÔ
 void MainSqStack();
 
@@ -72,4 +88,11 @@ ElemtType PopSTK(STK& s, int i);
 // ´òÓ¡
 void PrintSqStack(STK S);
 void SolveStack_5();
+
+// 3.1
+bool BracketsCheck(char* str);
+void SolveStackQueue_1();
+// 3.2
+void TrainArrange(char* train);
+void SolveStackQueue_2();
 #endif // _SQSTACK_H_
