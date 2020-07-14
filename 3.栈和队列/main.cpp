@@ -23,6 +23,7 @@ int main() {
 	}
 	{
 		//SolveStackQueue_1();
-		SolveStackQueue_2();
+		//SolveStackQueue_2();
+		SolveStackQueue_3();
 	}
 }

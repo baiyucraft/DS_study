@@ -72,5 +72,10 @@ void SolveQueue_2();
 // 3.
 // 用两个栈实现队列操作
 void SolveQueue_3();
+
+// 3.4
+// 不做具体实现
+// 船上队列q，客车队列car，货车队列truck
+void manager(SqQueue& q, SqQueue& car, SqQueue& truck);
 #endif // !_SQQUEUE_H_
 

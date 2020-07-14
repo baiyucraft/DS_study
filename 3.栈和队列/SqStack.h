@@ -95,4 +95,7 @@ void SolveStackQueue_1();
 // 3.2
 void TrainArrange(char* train);
 void SolveStackQueue_2();
+// 3.3
+double p(int n, double x);
+void SolveStackQueue_3();
 #endif // _SQSTACK_H_
