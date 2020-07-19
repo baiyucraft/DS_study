@@ -2,5 +2,7 @@
 #include "ThisString.h"
 
 int main(){
-	MainThisString();
+	//MainThisString();
+	//SolveindexVio();
+	SolveindexKMP();
 }

@@ -15,6 +15,8 @@ typedef struct {
 }HString;
 
 // 基本实现
+// 0.初始化Temp操作
+void InitTemp(char Temp[]);
 // 1.赋值操作
 void AssignSTr(SString& S, char cs[]);
 // 2.复制操作
@@ -26,11 +28,11 @@ int CompareSTr(SString S, SString T);
 // 5.求串长
 int LengthSTr(SString S);
 // 6.求子串
-SString SubSTr(SString S, int pos, int len);
+bool SubSTr(SString& Sub, SString S, int pos, int len);
 // 7.串连接
-SString ConcatSTr(SString S1, SString S2);
+void ConcatSTr(SString& T, SString S1, SString S2);
 // 8.定位操作
-void IndexSTr(SString S, SString T);
+int IndexSTr(SString S, SString T);
 // 9.清空操作
 void ClearSTr(SString& S);
 // 10.销毁操作
@@ -40,4 +42,12 @@ void PrintSTr(SString S);
 
 // 实现
 void MainThisString();
+// 模式匹配实现
+// 1.暴力匹配
+int IndexSTrVio(SString S, SString T);
+void SolveindexVio();
+// 2.KMP
+int IndexSTrKMP(SString S, SString T);
+void SolveindexKMP();
+
 #endif // _THISSTRING_H_
