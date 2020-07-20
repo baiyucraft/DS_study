@@ -47,7 +47,12 @@ void MainThisString();
 int IndexSTrVio(SString S, SString T);
 void SolveindexVio();
 // 2.KMP
+void GetNext(SString T, int* next);
 int IndexSTrKMP(SString S, SString T);
 void SolveindexKMP();
+// 3.KMP”≈ªØ
+void GetNextVal(SString T, int* nextval);
+int IndexSTrKMPVal(SString S, SString T);
+void SolveindexKMPVal();
 
 #endif // _THISSTRING_H_

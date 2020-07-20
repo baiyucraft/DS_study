@@ -4,5 +4,6 @@
 int main(){
 	//MainThisString();
 	//SolveindexVio();
-	SolveindexKMP();
+	//SolveindexKMP();
+	SolveindexKMPVal();
 }
