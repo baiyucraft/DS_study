@@ -227,6 +227,7 @@ void CreateThreadTree(ThreadTree& BT) {
 void visitThread(ThreadNode* T) {
     printf("%c->", T->data);
 }
+
 // 3.1.中序遍历构造主过程
 void CreateInThread(ThreadTree T) {
     ThreadNode* pre = NULL;
@@ -291,6 +292,7 @@ void InThreadOrder(ThreadTree T) {
         visitThread(p);
 }
 
+// 二叉树的创建与遍历
 void MainBiTree() {
 	BiTree BT;
     // 如  A(B(D,E(G,)),C(,F))#
@@ -320,6 +322,7 @@ void MainThreadTree() {
     ThreadTree T;
     ThreadNode* p;
     // 创建线索二叉树（赋值）
+    // A(B(,D),C(E,))#
     CreateThreadTree(T);
     // 1中序创建
     CreateInThread(T);
