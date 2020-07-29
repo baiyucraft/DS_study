@@ -54,6 +54,40 @@ ThreadNode* PreInNode(ThreadNode* p);
 // 3.7.求不含头结点的中序线索二叉树的中序遍历算法
 void InThreadOrder(ThreadTree T);
 
+// 4.1.先序遍历构造主过程
+void CreatePreThread(ThreadTree T);
+// 4.2.先序遍历构造线索二叉树
+void PreThread(ThreadTree& p, ThreadTree& pre);
+// 4.3.求先序遍历下的第一个结点
+ThreadNode* FirstPreNode(ThreadNode* p);
+// 4.4.求p结点在先序遍历下的后继结点
+ThreadNode* NextPreNode(ThreadNode* p);
+// 4.5.求在先序遍历下的最后一个结点
+ThreadNode* LastPreNode(ThreadNode* p);
+// 4.6.求p结点在先序遍历下的前驱结点
+ThreadNode* PrePreNode(ThreadNode* p);
+// 4.7.求不含头结点的先序线索二叉树的先序遍历算法
+void PreThreadOrder(ThreadTree T);
+// 4.8.求不含头结点的中序线索二叉树的中序遍历算法（逆向）
+void RevPreThreadOrder(ThreadTree T);
+
+// 5.1.后序遍历构造主过程
+void CreatePostThread(ThreadTree T);
+// 5.2.先序遍历构造线索二叉树
+void PostThread(ThreadTree& p, ThreadTree& pre);
+// 5.3.求先序遍历下的第一个结点
+ThreadNode* FirstPostNode(ThreadNode* p);
+// 5.4.求p结点在后序遍历下的后继结点
+ThreadNode* NextPostNode(ThreadNode* p);
+// 5.5.求在后序遍历下的最后一个结点
+ThreadNode* LastPostNode(ThreadNode* p);
+// 5.6.求p结点在后序遍历下的前驱结点
+ThreadNode* PrePostNode(ThreadNode* p);
+// 5.7.求不含头结点的后序线索二叉树的后序遍历算法
+void PostThreadOrder(ThreadTree T);
+// 5.8.求不含头结点的中序线索二叉树的中序遍历算法（逆向）
+void RevPostThreadOrder(ThreadTree T);
+
 
 void MainBiTree();
 void MainThreadTree();

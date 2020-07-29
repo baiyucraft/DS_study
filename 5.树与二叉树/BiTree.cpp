@@ -260,7 +260,7 @@ void InThread(ThreadTree& p, ThreadTree& pre) {
         InThread(p->rchild, pre);
     }
 }
-// 3.3.求中序遍历下的第一个结点
+// 3.3.求中序遍历下的第一个结点（找到最左下角的结点）
 ThreadNode* FirstInNode(ThreadNode* p) {
     while (p->ltag == 0)
         p = p->lchild;
@@ -282,7 +282,7 @@ ThreadNode* LastInNode(ThreadNode* p) {
 // 3.6.求p结点在中序遍历下的前驱结点
 ThreadNode* PreInNode(ThreadNode* p) {
     if (p->ltag == 0)
-        return FirstInNode(p->lchild);
+        return LastInNode(p->lchild);
     else
         return p->lchild;
 }
@@ -290,6 +290,141 @@ ThreadNode* PreInNode(ThreadNode* p) {
 void InThreadOrder(ThreadTree T) {
     for (ThreadNode* p = FirstInNode(T); p != NULL; p = NextInNode(p))
         visitThread(p);
+}
+// 3.8.求不含头结点的中序线索二叉树的中序遍历算法（逆向）
+void RevInThreadOrder(ThreadTree T) {
+    for (ThreadNode* p = LastInNode(T); p != NULL; p = PreInNode(p))
+        visitThread(p);
+}
+
+// 先序
+// 4.1.先序遍历构造主过程
+void CreatePreThread(ThreadTree T) {
+    ThreadNode* pre = NULL;
+    // 非空二叉树，线索化
+    if (T != NULL) {
+        PreThread(T, pre);
+        // 处理最后一个结点
+        if (pre->rchild == NULL)
+            pre->rtag = 1;
+    }
+}
+// 4.2.先序遍历构造线索二叉树
+void PreThread(ThreadTree& p, ThreadTree& pre) {
+    if (p != NULL) {
+        // 左子树为空，建立前驱线索
+        if (p->lchild == NULL) {
+            p->lchild = pre;
+            p->ltag = 1;
+        }
+        if (pre != NULL && pre->rchild == NULL) {
+            // 建立前驱结点的后继结点
+            pre->rchild = p;
+            pre->rtag = 1;
+        }
+        // 标记当前结点为刚刚访问过的结点
+        pre = p;
+        // 线索化左子树
+        if (p->ltag == 0)
+            PreThread(p->lchild, pre);
+        // 线索化右子树
+        PreThread(p->rchild, pre);
+    }
+}
+// 4.3.求先序遍历下的第一个结点
+ThreadNode* FirstPreNode(ThreadNode* p) {
+    return p;
+}
+// 4.4.求p结点在先序遍历下的后继结点
+ThreadNode* NextPreNode(ThreadNode* p) {
+    // 若没有孩子则指向后继
+    if (p->rtag == 1)
+        return p->rchild;
+    // 否则左孩子不为空指向左孩子
+    if (p->ltag == 0)
+        return p->lchild;
+    // 反之就是右孩子
+    else 
+        return p->rchild;
+        
+}
+// 4.5.求在先序遍历下的最后一个结点（找到最右下角的结点）
+ThreadNode* LastPreNode(ThreadNode* p) {
+    if (p->rtag == 0)
+        p = p->lchild;
+    else if (p->ltag == 0)
+        p = p->lchild;
+    return p;
+}
+// 4.6.求p结点在先序遍历下的前驱结点
+ThreadNode* PrePreNode(ThreadNode* p) {
+    
+}
+// 4.7.求不含头结点的先序线索二叉树的先序遍历算法
+void PreThreadOrder(ThreadTree T{
+
+    }
+// 4.8.求不含头结点的中序线索二叉树的中序遍历算法（逆向）
+void RevPreThreadOrder(ThreadTree T) {
+
+}
+
+// 后序
+// 5.1.后序遍历构造主过程
+void CreatePostThread(ThreadTree T) {
+    ThreadNode* pre = NULL;
+    // 非空二叉树，线索化
+    if (T != NULL) {
+        PostThread(T, pre);
+        // 处理最后一个结点
+        if (pre->rchild == NULL)
+            pre->rtag = 1;
+    }
+}
+// 5.2.先序遍历构造线索二叉树
+void PostThread(ThreadTree& p, ThreadTree& pre) {
+    if (p != NULL) {
+        // 线索化左子树
+        PostThread(p->lchild, pre);
+        // 线索化右子树
+        PostThread(p->rchild, pre);
+        // 左子树为空，建立前驱线索
+        if (p->lchild == NULL) {
+            p->lchild = pre;
+            p->ltag = 1;
+        }
+        if (pre != NULL && pre->rchild == NULL) {
+            // 建立前驱结点的后继结点
+            pre->rchild = p;
+            pre->rtag = 1;
+        }
+        // 标记当前结点为刚刚访问过的结点
+        pre = p;
+    }
+}
+// 5.3.求先序遍历下的第一个结点
+ThreadNode* FirstPostNode(ThreadNode* p) {
+
+}
+// 5.4.求p结点在后序遍历下的后继结点
+ThreadNode* NextPostNode(ThreadNode* p) {
+
+}
+// 5.5.求在后序遍历下的最后一个结点
+ThreadNode* LastPostNode(ThreadNode* p) {
+
+}
+// 5.6.求p结点在后序遍历下的前驱结点
+ThreadNode* PrePostNode(ThreadNode* p) {
+
+}
+// 5.7.求不含头结点的后序线索二叉树的后序遍历算法
+void PostThreadOrder(ThreadTree T) {
+
+}
+// 5.8.求不含头结点的中序线索二叉树的中序遍历算法（逆向）
+void RevPostThreadOrder(ThreadTree T) {
+
 }
 
 // 二叉树的创建与遍历
@@ -319,26 +454,29 @@ void MainBiTree() {
 
 void MainThreadTree() {
     // 线索二叉树
-    ThreadTree T;
+    ThreadTree TIn, TPre, TPost;
     ThreadNode* p;
     // 创建线索二叉树（赋值）
     // A(B(,D),C(E,))#
-    CreateThreadTree(T);
+    CreateThreadTree(TIn);
     // 1中序创建
-    CreateInThread(T);
+    CreateInThread(TIn);
     // 1.1
-    p = FirstInNode(T);
+    p = FirstInNode(TIn);
     printf("1.1中序遍历下的第一个结点为：%c", p->data);
     // 1.2
     p = NextInNode(p);
     printf("\n1.2p结点在中序遍历下的后继结点为：%c", p->data);
     // 1.3
-    p = LastInNode(T);
+    p = LastInNode(TIn);
     printf("\n1.3中序遍历下的最后一个结点为：%c", p->data);
     // 1.4
     p = PreInNode(p);
     printf("\n1.4p结点在中序遍历下的前驱结点为：%c", p->data);
     // 1.5
     printf("\n1.5不含头结点的中序线索二叉树的中序遍历算法：");
-    InThreadOrder(T);
+    InThreadOrder(TIn);
+    // 1.6
+    printf("\n1.6不含头结点的中序线索二叉树的中序遍历算法(逆向)：");
+    RevInThreadOrder(TIn);
 }
