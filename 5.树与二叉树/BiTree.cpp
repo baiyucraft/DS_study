@@ -142,7 +142,43 @@ void PostOrder(BiTree BT) {
 }
 // 5.二叉树的后序遍历（非递归）
 void PostOrder2(BiTree BT) {
-
+    BiTNodeStack S;
+    InitBiTNodeStack(S);
+    // 遍历结点p
+    BiTNode* p = BT;
+    BiTNode* r = NULL;
+    // 如果p不为空或者栈不为空循环进行
+    while (p || !EmptyBiTNodeStack(S)) {
+        // 如果p不为空
+        if (p) {
+            // 当前结点入栈
+            PushBiTNodeStack(S, p);
+            // 一路向左
+            p = p->lchild;
+        }
+        // 如果p为空
+        else {
+            // 读取栈顶元素（非出栈）
+            p = GetTopBiTNodeStack(S);
+            // 若右子树存在且未被访问过
+            if (p->rchild && p->rchild != r) {
+                // 转向右节点
+                p = p->rchild;
+                // 压入栈
+                PushBiTNodeStack(S, p);
+                // 走到左子树
+                p = p->lchild;
+            }
+            else {
+                // 反之出栈
+                p = PopBiTNodeStack(S);
+                visit(p);
+                r = p;
+                // 使用完重置p指针
+                p = NULL;
+            }
+        }
+    }
 }
 // 6.层次遍历
 void LevelOrder(BiTree BT) {
@@ -358,12 +394,12 @@ ThreadNode* LastPreNode(ThreadNode* p) {
 }
 // 4.6.求p结点在先序遍历下的前驱结点
 ThreadNode* PrePreNode(ThreadNode* p) {
-    
+    return p;
 }
 // 4.7.求不含头结点的先序线索二叉树的先序遍历算法
-void PreThreadOrder(ThreadTree T{
+void PreThreadOrder(ThreadTree T){
 
-    }
+}
 // 4.8.求不含头结点的中序线索二叉树的中序遍历算法（逆向）
 void RevPreThreadOrder(ThreadTree T) {
 
@@ -404,19 +440,19 @@ void PostThread(ThreadTree& p, ThreadTree& pre) {
 }
 // 5.3.求先序遍历下的第一个结点
 ThreadNode* FirstPostNode(ThreadNode* p) {
-
+    return p;
 }
 // 5.4.求p结点在后序遍历下的后继结点
 ThreadNode* NextPostNode(ThreadNode* p) {
-
+    return p;
 }
 // 5.5.求在后序遍历下的最后一个结点
 ThreadNode* LastPostNode(ThreadNode* p) {
-
+    return p;
 }
 // 5.6.求p结点在后序遍历下的前驱结点
 ThreadNode* PrePostNode(ThreadNode* p) {
-
+    return p;
 }
 // 5.7.求不含头结点的后序线索二叉树的后序遍历算法
 void PostThreadOrder(ThreadTree T) {
@@ -451,10 +487,11 @@ void MainBiTree() {
     printf("\n6.层次遍历结果为：");
     LevelOrder(BT);
 }
-
+// 线索二叉树的创建与遍历
 void MainThreadTree() {
     // 线索二叉树
-    ThreadTree TIn, TPre, TPost;
+    ThreadTree TIn;
+    //ThreadTree TPre, TPost;
     ThreadNode* p;
     // 创建线索二叉树（赋值）
     // A(B(,D),C(E,))#

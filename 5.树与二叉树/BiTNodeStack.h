@@ -13,11 +13,11 @@ typedef struct {
 }BiTNodeStack;
 
 // 1.³õÊ¼»¯Õ»
-void InitBiTNodeStack(BiTNodeStack& S) {
+inline void InitBiTNodeStack(BiTNodeStack& S) {
 	S.top = -1;
 }
 // 2.½øÕ»
-bool PushBiTNodeStack(BiTNodeStack& S, BiTNode* x) {
+inline bool PushBiTNodeStack(BiTNodeStack& S, BiTNode* x) {
 	if (S.top == MaxSize - 1) {
 		printf("Õ»ÒÑÂú");
 		return false;
@@ -26,7 +26,7 @@ bool PushBiTNodeStack(BiTNodeStack& S, BiTNode* x) {
 	return true;
 }
 // 3.³öÕ»
-BiTNode* PopBiTNodeStack(BiTNodeStack& S) {
+inline BiTNode* PopBiTNodeStack(BiTNodeStack& S) {
 	if (S.top == -1) {
 		printf("Õ»ÒÑ¿Õ");
 		return NULL;
@@ -34,14 +34,14 @@ BiTNode* PopBiTNodeStack(BiTNodeStack& S) {
 	return S.BT[S.top--];
 }
 // 4.ÅÐÕ»¿Õ
-bool EmptyBiTNodeStack(BiTNodeStack S) {
+inline bool EmptyBiTNodeStack(BiTNodeStack S) {
 	if (S.top == -1)
 		return true;
 	else
 		return false;
 }
 // 5.¶ÁÕ»¶¥ÔªËØ
-BiTNode* GetTopBiTNodeStack(BiTNodeStack S) {
+inline BiTNode* GetTopBiTNodeStack(BiTNodeStack S) {
 	if (S.top == -1) {
 		printf("Õ»Îª¿Õ");
 		return NULL;
@@ -49,7 +49,7 @@ BiTNode* GetTopBiTNodeStack(BiTNodeStack S) {
 	return S.BT[S.top];
 }
 
-// ¶þ²æÊ÷Õ»
+// ÏßË÷¶þ²æÊ÷Õ»
 typedef struct {
 	// ÔªËØ
 	ThreadNode* BT[MaxSize];
@@ -58,11 +58,11 @@ typedef struct {
 }ThreadNodeStack;
 
 // 1.³õÊ¼»¯Õ»
-void InitThreadNodeStack(ThreadNodeStack& S) {
+inline void InitThreadNodeStack(ThreadNodeStack& S) {
 	S.top = -1;
 }
 // 2.½øÕ»
-bool PushThreadNodeStack(ThreadNodeStack& S, ThreadNode* x) {
+inline bool PushThreadNodeStack(ThreadNodeStack& S, ThreadNode* x) {
 	if (S.top == MaxSize - 1) {
 		printf("Õ»ÒÑÂú");
 		return false;
@@ -71,7 +71,7 @@ bool PushThreadNodeStack(ThreadNodeStack& S, ThreadNode* x) {
 	return true;
 }
 // 3.³öÕ»
-ThreadNode* PopThreadNodeStack(ThreadNodeStack& S) {
+inline ThreadNode* PopThreadNodeStack(ThreadNodeStack& S) {
 	if (S.top == -1) {
 		printf("Õ»ÒÑ¿Õ");
 		return NULL;
@@ -79,14 +79,14 @@ ThreadNode* PopThreadNodeStack(ThreadNodeStack& S) {
 	return S.BT[S.top--];
 }
 // 4.ÅÐÕ»¿Õ
-bool EmptyThreadNodeStack(ThreadNodeStack S) {
+inline bool EmptyThreadNodeStack(ThreadNodeStack S) {
 	if (S.top == -1)
 		return true;
 	else
 		return false;
 }
 // 5.¶ÁÕ»¶¥ÔªËØ
-ThreadNode* GetTopThreadNodeStack(ThreadNodeStack S) {
+inline ThreadNode* GetTopThreadNodeStack(ThreadNodeStack S) {
 	if (S.top == -1) {
 		printf("Õ»Îª¿Õ");
 		return NULL;

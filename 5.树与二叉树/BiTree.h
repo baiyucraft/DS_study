@@ -91,4 +91,29 @@ void RevPostThreadOrder(ThreadTree T);
 
 void MainBiTree();
 void MainThreadTree();
+
+// 题解
+// 4.从下到上/从右到左的层次遍历
+void InvertLevelOrder(BiTree BT);
+void SolveBiTree_4();
+// 5.非递归求二叉树高度
+int BiTreeDepth(BiTree T);
+// 5..递归求二叉树高度
+int BiTreeDepth2(BiTree T);
+void SolveBiTree_5();
+// 6.通过先序和中序建立二叉树
+BiTree PreInCreate(ElemtType A[], ElemtType B[], int l1, int h1, int l2, int h2);
+void SolveBiTree_6();
+// 7.检查是否为完全二叉树
+bool IsComplete(BiTree T);
+void SolveBiTree_7();
+// 8.双分支结点个数
+int DsonNodes(BiTree T);
+void SolveBiTree_8();
+// 9.双分支结点个数
+void Swap(BiTree T);
+void SolveBiTree_9();
+// 10.先序遍历第k个的值
+ElemtType PreNode(BiTree T, int k);
+void SolveBiTree_10();
 #endif // _BITREE_H_
