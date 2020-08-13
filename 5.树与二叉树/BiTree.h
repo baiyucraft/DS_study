@@ -116,4 +116,11 @@ void SolveBiTree_9();
 // 10.先序遍历第k个的值
 ElemtType PreNode(BiTree T, int k);
 void SolveBiTree_10();
+// 11.删除值以元素值x根的子树
+void DeleteXTree(BiTree T);
+void SeachXBiTree(BiTree T, ElemtType x);
+void SolveBiTree_11();
+// 12.求元素值为x的结点的祖先结点
+void SeachXParent(BiTree T, ElemtType x);
+void SolveBiTree_12();
 #endif // _BITREE_H_

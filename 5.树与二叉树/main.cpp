@@ -11,7 +11,9 @@ int main(){
     //SolveBiTree_7();
     //SolveBiTree_8();
     //SolveBiTree_9();
-    SolveBiTree_10();
+    //SolveBiTree_10();
+    //SolveBiTree_11();
+    SolveBiTree_12();
 }
 
 
