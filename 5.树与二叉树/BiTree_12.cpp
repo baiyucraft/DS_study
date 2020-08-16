@@ -9,7 +9,7 @@ typedef struct {
 }stack;
 
 // 12.求元素值为x的结点的祖先结点
-void SeachXParent(BiTree T, ElemtType x) {
+void SearchXParent(BiTree T, ElemtType x) {
 	stack S[255]; 
 	int top = 0;
 	BiTNode* p = T;
@@ -37,10 +37,7 @@ void SeachXParent(BiTree T, ElemtType x) {
 			S[top].tag = 1;
 			p = S[top].t->rchild;
 		}
-		if (p == NULL)
-			printf("this");
 	}
-
 }
 void SolveBiTree_12() {
 	BiTree BT;
@@ -53,5 +50,5 @@ void SolveBiTree_12() {
 	PostOrder(BT);
 
 	printf("\n\n‘E’-");
-	SeachXParent(BT, 'E');
+	SearchXParent(BT, 'E');
 }

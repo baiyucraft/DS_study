@@ -121,6 +121,21 @@ void DeleteXTree(BiTree T);
 void SeachXBiTree(BiTree T, ElemtType x);
 void SolveBiTree_11();
 // 12.求元素值为x的结点的祖先结点
-void SeachXParent(BiTree T, ElemtType x);
+void SearchXParent(BiTree T, ElemtType x);
 void SolveBiTree_12();
+// 13.找p、q最近的公共祖先结点r
+BiTNode* Ancestor(BiTree ROOT, BiTNode* p, BiTNode* q);
+// (辅助)后续遍历找到值为x的
+BiTNode* SearchX(BiTree T, ElemtType x);
+void SolveBiTree_13();
+// 14.求二叉树的宽度
+int BiTreeWidth(BiTree T);
+void SolveBiTree_14();
+// 15.满二叉树根据先续得到后续递归分别左右子树
+void PreToPost(ElemtType pre[], int l1, int h1, ElemtType Post[], int l2, int h2);
+void SolveBiTree_15();
+// 16.从左到右输出叶子结点
+BiTNode* InOrderLeave(BiTree T);
+void SolveBiTree_16();
+
 #endif // _BITREE_H_
